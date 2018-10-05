@@ -7,30 +7,40 @@
           src="http://code.jquery.com/jquery-3.2.1.min.js">
         </script>
         <style>
-            
+            body{
+                background-image:url("https://thenominationsgirl.files.wordpress.com/2016/01/studio-ghibli-characters-36913-1920x1080.jpg?w=1920&h=1080&crop=1");
+                background-size:cover;            
+            }
+            #content{
+                display:inline-block;
+            }
+            p,h2,h4{
+                background:white;
+                display:inline-block;
+            }
         </style>
     </head>
     <body>
         <div id="content">
-            <h2>Welcome to the Fun!</h2>
-            <h4>Come test your knowledge of Studio Ghibli, if you think you're up to it ;)</h4>
+            <h2>Welcome to the Fun!</h2><br>
+            <h4>Come test your knowledge of Studio Ghibli, if you think you're up to it ;)</h4><br>
             <button id="beginbutton">click me to begin!</button>
             <div id="game" style="display:none;">
-                <div>Yea!</div>
+                <p>Yea!</p>
                 <br>
-                <div id="question1"></div>
+                <p id="question1"></p>
                 <select id="answer1">default</select>
                 <br><br>
-                <div id="question2"></div>
+                <p id="question2"></p>
                 <select id="answer2">default</select>
                 <br><br>
-                <div id="question3"></div>
+                <p id="question3"></p>
                 <select id="answer3">default</select>
                 <br><br>
-                <div id="question4"></div>
+                <p id="question4"></p>
                 <select id="answer4">default</select>
                 <br><br>
-                <div id="question5"></div>
+                <p id="question5"></p>
                 <select id="answer5">default</select>
                 <br><br>
                 <button id="submit">submit answers</button>
