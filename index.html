@@ -2,14 +2,240 @@
 <html>
     <head>
         <title>Creative 2</title>
+        <!--how well you know your studio ghibli-->
         <script
           src="http://code.jquery.com/jquery-3.2.1.min.js">
         </script>
+        <style>
+            
+        </style>
     </head>
     <body>
-        
+        <div id="content">
+            <h2>Welcome to the Fun!</h2>
+            <h4>Come test your knowledge of Studio Ghibli, if you think you're up to it ;)</h4>
+            <button id="beginbutton">click me to begin!</button>
+            <div id="game" style="display:none;">
+                <div>Yea!</div>
+                <br>
+                <div id="question1"></div>
+                <select id="answer1">default</select>
+                <br><br>
+                <div id="question2"></div>
+                <select id="answer2">default</select>
+                <br><br>
+                <div id="question3"></div>
+                <select id="answer3">default</select>
+                <br><br>
+                <div id="question4"></div>
+                <select id="answer4">default</select>
+                <br><br>
+                <div id="question5"></div>
+                <select id="answer5">default</select>
+                <br><br>
+                <button id="submit">submit answers</button>
+            </div>
+        </div>
     </body>
     <script>
-        
+        var playing=false;
+        var people=[];
+        function getRandomIndex(){
+            var numbers=[0,1,2,3,4,5,6];
+            var ret=[];
+            var len=numbers.length;
+            while(len != 0){
+                ret.push(numbers.splice(Math.floor(Math.random() * len),1));
+                len--;
+            }
+            return ret;
+        }
+        function fillQuestion1(){
+            var string="What is ";
+            string+=people[0].name;
+            string+="'s age?";
+            $('#question1').html(string);
+            var numbers=getRandomIndex();
+            var everything="<option value=\"\">default</option>";
+            for(var i=0;i<7;i++){
+                everything+="<option value=\"";
+                everything+=people[numbers[i]].age;
+                everything+="\">";
+                everything+=people[numbers[i]].age;
+                everything+="</option>"
+            }
+            $('#answer1').html(everything);
+            $('#answer1').change(function(e){
+                e.preventDefault();
+                if($('#answer1 option:selected').val()===people[0].age){
+                    alert("hooray!");
+                }else{
+                    alert("aww...");
+                }
+            });
+            
+        }
+        function fillQuestion2(){
+            var string="What is ";
+            string+=people[1].name;
+            string+="'s gender?";
+            $('#question2').html(string);
+            var numbers=getRandomIndex();
+            var everything="<option value=\"\">default</option>";
+            for(var i=0;i<7;i++){
+                everything+="<option value=\"";
+                everything+=people[numbers[i]].gender;
+                everything+="\">";
+                everything+=people[numbers[i]].gender;
+                everything+="</option>"
+            }
+            $('#answer2').html(everything);
+            $('#answer2').change(function(e){
+                e.preventDefault();
+                if($('#answer2 option:selected').val()===people[1].gender){
+                    alert("hooray!");
+                }else{
+                    alert("aww...");
+                }
+            });
+            
+        }function fillQuestion3(){
+            var string="What is ";
+            string+=people[2].name;
+            string+="'s hair color?";
+            $('#question3').html(string);
+            var numbers=getRandomIndex();
+            var everything="<option value=\"\">default</option>";
+            for(var i=0;i<7;i++){
+                everything+="<option value=\"";
+                everything+=people[numbers[i]].hair_color;
+                everything+="\">";
+                everything+=people[numbers[i]].hair_color;
+                everything+="</option>"
+            }
+            $('#answer3').html(everything);
+            $('#answer3').change(function(e){
+                e.preventDefault();
+                if($('#answer3 option:selected').val()===people[2].hair_color){
+                    alert("hooray!");
+                }else{
+                    alert("aww...");
+                }
+            });
+            
+        }function fillQuestion4(){
+            var string="What is ";
+            string+=people[3].name;
+            string+="'s eye color?";
+            $('#question4').html(string);
+            var numbers=getRandomIndex();
+            var everything="<option value=\"\">default</option>";
+            for(var i=0;i<7;i++){
+                everything+="<option value=\"";
+                everything+=people[numbers[i]].eye_color;
+                everything+="\">";
+                everything+=people[numbers[i]].eye_color;
+                everything+="</option>"
+            }
+            $('#answer4').html(everything);
+            $('#answer4').change(function(e){
+                e.preventDefault();
+                if($('#answer4 option:selected').val()===people[3].eye_color){
+                    alert("hooray!");
+                }else{
+                    alert("aww...");
+                }
+            });
+            
+        }function fillQuestion5(){
+            var string="What is ";
+            string+=people[4].name;
+            string+="'s age?";
+            $('#question5').html(string);
+            var numbers=getRandomIndex();
+            var everything="<option value=\"\">default</option>";
+            for(var i=0;i<7;i++){
+                everything+="<option value=\"";
+                everything+=people[numbers[i]].age;
+                everything+="\">";
+                everything+=people[numbers[i]].age;
+                everything+="</option>"
+            }
+            $('#answer5').html(everything);
+            $('#answer5').change(function(e){
+                e.preventDefault();
+                if($('#answer5 option:selected').val()===people[4].age){
+                    alert("hooray!");
+                }else{
+                    alert("aww...");
+                }
+            });
+            
+        }function fillQuestion6(){
+            var string="What is ";
+            string+=people[5].name;
+            string+="'s age?";
+            $('#question6').html(string);
+            var numbers=getRandomIndex();
+            var everything="<option value=\"\">default</option>";
+            for(var i=0;i<7;i++){
+                everything+="<option value=\"";
+                everything+=people[numbers[i]].age;
+                everything+="\">";
+                everything+=people[numbers[i]].age;
+                everything+="</option>"
+            }
+            $('#answer6').html(everything);
+            $('#answer6').change(function(e){
+                e.preventDefault();
+                if($('#answer6 option:selected').val()===people[5].age){
+                    alert("hooray!");
+                }else{
+                    alert("aww...");
+                }
+            });
+            
+        }
+        // get the list of people, choose a random one, ask what type and such with some variance, return result (maybe even a picture)
+        $(document).ready(function(){
+            $("#beginbutton").click(function(e){
+                if(!playing){
+                    playing=true;
+                    var url="https://ghibliapi.herokuapp.com/people";
+                    alert("You now have 5 questions to answer. Ready, Set, ... GO!");
+                    var x = document.getElementById("game");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                    $.getJSON(url,function(data){
+                        //console.log(data);
+                        for(var i=0;i<7;i++){
+                            people[i]=data[Math.floor(Math.random() * 31)];
+                        }
+                        console.log(people);
+                        fillQuestion1();
+                        fillQuestion2();
+                        fillQuestion3();
+                        fillQuestion4();
+                        fillQuestion5();
+                        //fillQuestion6();
+                    })
+                    .fail(function(error){
+                        console.log(error);
+                    });
+                }
+            });
+            $("#submit").click(function(e){
+               playing=false;
+               var x = document.getElementById("game");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
+            });
+        });
     </script>
 </html>
